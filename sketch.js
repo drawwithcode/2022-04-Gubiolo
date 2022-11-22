@@ -1,10 +1,14 @@
 
 //Declare starting size of the brush
+let brush1 = 0;
+
 let brush = 2;
 //Declare starting color value RGB
 let R = 100;
 let G = 100;
 let B = 100;
+
+let easing = 0.08;
 
 let textcolor = "black";
 let size = 17;
@@ -61,7 +65,9 @@ function draw() {
    //brush come volume mic
   if (mic) {
     const micLevel = mic.getLevel();
-    brush = map(micLevel, 0, 1, 0, 300);
+    brush1 = map(micLevel, 0, 1, 0, 300);
+    brush += (brush1 - brush) * easing;
+
   
   } 
  

@@ -134,3 +134,8 @@ function windowResized() {
   pop();
 }
 
+function touchEnded(event) {
+	if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission) {
+		DeviceOrientationEvent.requestPermission()
+	}
+}
